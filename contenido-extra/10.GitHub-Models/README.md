@@ -56,32 +56,25 @@ jobs:
     steps:
       - name: Preparar payload
         run: |
-          cat > payload.json <<'JSON'
-          {
-            "model": "openai/gpt-4o-mini",
-            "messages": [
-              {
-                "role": "system",
-                "content": "Resume el texto en una frase clara y breve."
-              },
-              {
-                "role": "user",
-                "content": "${{ inputs.texto }}"
-              }
-            ]
-          }
-          JSON
+          jq -n             --arg text "${{ inputs.texto }}"             '{
+              model: "openai/gpt-4o",
+              messages: [
+                {
+                  role: "system",
+                  content: "Resume el texto en una frase clara y breve."
+                },
+                {
+                  role: "user",
+                  content: $text
+                }
+              ]
+            }' > payload.json
 
       - name: Invocar GitHub Models
         env:
-          GH_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          curl --fail-with-body \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer ${GH_TOKEN}" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            https://models.github.ai/inference/chat/completions \
-            -d @payload.json
+          curl -L --fail-with-body             -X POST             -H "Accept: application/vnd.github+json"             -H "Authorization: Bearer ${GITHUB_TOKEN}"             -H "X-GitHub-Api-Version: 2022-11-28"             -H "Content-Type: application/json"             https://models.github.ai/inference/chat/completions             -d @payload.json
 ```
 
 ---
