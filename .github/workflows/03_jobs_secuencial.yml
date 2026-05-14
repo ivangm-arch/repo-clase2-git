@@ -1,0 +1,18 @@
+name: Jobs Secuenciales
+on:
+  push:
+    branches:
+      - test
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Construir proyecto
+        run: echo "Construyendo proyecto..."
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ejecutar tests
+        run: echo "Ejecutando tests..."
