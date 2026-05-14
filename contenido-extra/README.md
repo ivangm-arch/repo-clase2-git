@@ -29,13 +29,3 @@ Esta sección contiene ejercicios adicionales para ampliar la clase principal co
 - [11. Dependabot](11.Dependabot/README.md)
 
 ---
-
-## Recomendación docente
-
-No intentes impartir todo este bloque si solo tienes una sesión corta. Prioriza:
-
-1. Pull Request workflows.
-2. Matrix builds.
-3. Seguridad con `permissions`.
-4. Deploy simulado.
-5. IA aplicada a PRs o release notes.
