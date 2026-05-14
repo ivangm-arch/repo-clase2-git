@@ -1,0 +1,16 @@
+name: Extra 06 - Call Reusable Workflow
+
+on:
+  push:
+    branches:
+      - test
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  call-tests:
+    uses: ./.github/workflows/reusable-python-tests.yml
+    with:
+      python-version: '3.12'
