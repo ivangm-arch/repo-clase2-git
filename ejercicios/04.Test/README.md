@@ -65,10 +65,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       
       - name: Configurar Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
       
@@ -81,7 +81,7 @@ jobs:
 
 ### 7. Haz commit y push de los cambios realizados
 ```bash copy
-git add *
+git add .
 git commit -m "Ejercicio 4: Añadir workflow de tests automáticos"
 git push origin main
 ```
