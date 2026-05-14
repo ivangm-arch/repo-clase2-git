@@ -1,0 +1,17 @@
+name: Subir Artifact
+on:
+  push:
+    branches:
+      - test
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Crear archivo de ejemplo
+        run: echo "Contenido del artifact" > archivo.txt
+
+      - name: Subir artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mi-artifact
+          path: archivo.txt
