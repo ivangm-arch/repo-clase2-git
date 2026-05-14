@@ -1,0 +1,17 @@
+name: Jobs en Paralelo
+on:
+  push:
+    branches:
+      - test
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comprobar Python
+        run: python3 --version
+
+  node:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comprobar Node.js
+        run: node --version
