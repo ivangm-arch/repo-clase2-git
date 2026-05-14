@@ -1,0 +1,27 @@
+name: Extra 02 - PR Validation
+
+on:
+  pull_request:
+    branches:
+      - develop
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Mostrar contexto
+        run: |
+          echo "Evento: ${{ github.event_name }}"
+          echo "Rama origen: ${{ github.head_ref }}"
+          echo "Rama destino: ${{ github.base_ref }}"
+
+      - name: Validación simple
+        run: |
+          test -f README.md
