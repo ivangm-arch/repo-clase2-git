@@ -23,13 +23,13 @@ on:
       - main
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - name: Crear archivo de ejemplo
         run: echo "Contenido del artifact" > archivo.txt
 
       - name: Subir artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: mi-artifact
           path: archivo.txt

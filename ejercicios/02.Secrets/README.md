@@ -25,7 +25,7 @@ on:
     branches: [ "main" ]
 jobs:
   print-secrets-token:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - name: Mostrar variable de entorno
         env:

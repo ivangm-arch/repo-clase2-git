@@ -63,12 +63,12 @@ on:
       - main
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       
+        uses: actions/setup-python@v7
       - name: Configurar Python
-        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
       
