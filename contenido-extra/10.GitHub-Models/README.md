@@ -51,7 +51,7 @@ permissions:
 
 jobs:
   summarize:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
 
     steps:
       - name: Preparar payload
