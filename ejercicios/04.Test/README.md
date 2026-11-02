@@ -61,20 +61,21 @@ on:
   push:
     branches:
       - main
+
 jobs:
   test:
     runs-on: ubuntu-26.04
     steps:
       - uses: actions/checkout@v7
-      
-        uses: actions/setup-python@v7
+
       - name: Configurar Python
+        uses: actions/setup-python@v7
         with:
           python-version: '3.x'
-      
+
       - name: Instalar dependencias
         run: pip install -r proyecto/requirements.txt
-      
+
       - name: Ejecutar tests
         run: pytest proyecto/test_demo.py
 ```
