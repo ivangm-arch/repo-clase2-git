@@ -27,7 +27,7 @@ on:
       - main
 jobs:
   saludo:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - name: Imprimir mensaje
         run: echo "Hola mundo desde GitHub Actions"

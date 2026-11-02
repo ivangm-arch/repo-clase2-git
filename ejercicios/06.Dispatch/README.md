@@ -27,7 +27,7 @@ on:
         default: 'Alumno'
 jobs:
   saludo:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - name: Saludo personalizado
         run: echo "Hola, ${{ github.event.inputs.nombre }}!"

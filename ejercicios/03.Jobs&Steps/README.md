@@ -29,13 +29,13 @@ on:
       - main
 jobs:
   python:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - name: Comprobar Python
         run: python3 --version
 
   node:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - name: Comprobar Node.js
         run: node --version
@@ -60,14 +60,14 @@ on:
       - main
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - name: Construir proyecto
         run: echo "Construyendo proyecto..."
 
   test:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - name: Ejecutar tests
         run: echo "Ejecutando tests..."

@@ -34,11 +34,11 @@ permissions:
 
 jobs:
   security-check:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Comprobar permisos mínimos
         run: |

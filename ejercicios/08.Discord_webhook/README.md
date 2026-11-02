@@ -36,7 +36,7 @@ on:
       - main
 jobs:
   notify-discord:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - name: Enviar mensaje a Discord
         env:

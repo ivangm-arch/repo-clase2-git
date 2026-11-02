@@ -38,7 +38,7 @@ permissions:
 
 jobs:
   scheduled-check:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
 
     steps:
       - name: Mostrar fecha
